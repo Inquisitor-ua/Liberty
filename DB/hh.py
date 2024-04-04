@@ -99,6 +99,14 @@ def update(column, part):
     db.close()
     return "Данные изменены"
 
+def delete_user():
+    db = sqlite3.connect("data.db")
+    c = db.cursor()
+    c.execute("DELETE FROM users WHERE name = ?", (name,))
+    db.commit()
+    db.close()
+    return "Пользователь удален"
+
 def main():
     register()
     while True:
@@ -113,7 +121,8 @@ def main():
             result = change()
             print(result)
         elif ans == '4':
-            pas
+            result = delete_user()
+            print(result)
         elif ans == '5':
             print("Выходим")
             break
