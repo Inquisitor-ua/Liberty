@@ -23,7 +23,7 @@ def register():
 
     total = type_number('Капуста есть: ')
 
-    db = sqlite3.connect("data.db")
+    db = sqlite3.connect("DB/data.db")
     c = db.cursor() 
     c.execute("INSERT INTO users (name, password, email, total) VALUES (?,?,?,?)",(name, password, email, total))
     db.commit()
@@ -39,7 +39,7 @@ def upgreat(summa, tr, db, c):
     db.commit()
 
 def check_balance():
-    db = sqlite3.connect("data.db")
+    db = sqlite3.connect("DB/data.db")
     c = db.cursor()
     total = c.execute("SELECT total FROM users WHERE name = ?", (name,)).fetchone()[0]
     db.close()
@@ -55,7 +55,7 @@ def type_number(text):
             print("loh")
 
 def ins_trans(trans_type, tr):
-    db = sqlite3.connect("data.db")
+    db = sqlite3.connect("DB/data.db")
     c = db.cursor()
     name = input("Введите название транзакции")
 
@@ -87,7 +87,7 @@ def change():
 
 def update(column, part):
     data = input(f"Введите {part}")
-    db = sqlite3.connect("data.db")
+    db = sqlite3.connect("DB/data.db")
     c = db.cursor()
     if column == 'name':
         c.execute("UPDATE users SET name = ? WHERE name = ?", (data, name))
@@ -100,9 +100,11 @@ def update(column, part):
     return "Данные изменены"
 
 def delete_user():
-    db = sqlite3.connect("data.db")
+    db = sqlite3.connect("DB/data.db")
     c = db.cursor()
+    id = c.execute("SELECT id FROM users WHERE name = ?", (name,)).fetchone()[0]
     c.execute("DELETE FROM users WHERE name = ?", (name,))
+    c.execute("DELETE FROM money WHERE user_id = ?", (id,))
     db.commit()
     db.close()
     return "Пользователь удален из жизни!"
