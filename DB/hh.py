@@ -105,7 +105,7 @@ def delete_user():
     c.execute("DELETE FROM users WHERE name = ?", (name,))
     db.commit()
     db.close()
-    return "Пользователь удален из жизни"
+    return "Пользователь удален из жизни!"
 
 def main():
     register()
