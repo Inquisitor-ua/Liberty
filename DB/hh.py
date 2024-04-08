@@ -13,9 +13,24 @@ def number_check(total):
     else:
         return False
     
+def check_name(name):
+    db = sqlite3.connect("DB/data.db")
+    c = db.cursor()
+    names = c.execute("SELECT name FROM users WHERE name = ?", (name,)).fetchall()
+    if len(names) > 0:
+        return False
+    else:
+        return True
+    
 def register():
-    global name
-    name = input("Напишите имя пж по-брацки: ")
+    while True:
+        global name
+        name = input("Напишите имя пж по-брацки: ")
+        if check_name(name):
+            break
+        else:
+            print("Это имя занято!")
+    
     password = input("Пароль суки: ")
     email = input("Мыло еще: ")
 
@@ -57,12 +72,12 @@ def type_number(text):
 def ins_trans(trans_type, tr):
     db = sqlite3.connect("DB/data.db")
     c = db.cursor()
-    name = input("Введите название транзакции")
+    trans_name = input("Введите название транзакции: ")
 
     summa = type_number(f"Сколько денег вы {trans_type}")
 
     id = c.execute("SELECT id FROM users WHERE name = ?", (name,)).fetchone()[0]
-    c.execute("INSERT INTO money (vuplatu, cyma, trans_type, user_id) VALUES (?,?,?)", (name, summa, tr, id))
+    c.execute("INSERT INTO money (vuplatu, cyma, trans_type, user_id) VALUES (?,?,?,?)", (trans_name, summa, tr, id))
     upgreat(summa, tr, db, c)
     db.commit()
 
@@ -79,18 +94,24 @@ def plus():
 def change():
     ans = input("1. Изменить имя\n2. Изменить пароль\n")
     if ans == '1':
-        return update('name', 'новое имя лоха: ')
+        return update('name', 'новое имя лоха: ', name)
     elif ans == '2':
-        return update('password', 'новый пароль лоха: ')
+        return update('password', 'новый пароль лоха: ', name)
     else:
         return change()
 
-def update(column, part):
+def update(column, part, name):
     data = input(f"Введите {part}")
     db = sqlite3.connect("DB/data.db")
     c = db.cursor()
     if column == 'name':
-        c.execute("UPDATE users SET name = ? WHERE name = ?", (data, name))
+        if check_name(data):
+            c.execute("UPDATE users SET name = ? WHERE name = ?", (data, name))
+            name = data
+        else:
+            print("Имя занято!")
+            db.close()
+            return update(column, part)
     elif column == 'password':
         c.execute("UPDATE users SET password = ? WHERE name = ?", (data, name))
     else:
