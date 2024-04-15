@@ -2,13 +2,22 @@ from bs4 import BeautifulSoup
 import requests
 from jopa import ins
 
+def download(url):
+    response = requests.get(url)
+    for value in response.iter_content(1024*1024):
+        with open('C:/users/egorm/desktop/lessons/Liberty/dior/images/'+url.split('/')[-1].strip('?sw=800'), 'wb') as file:
+            file.write(value)
+
 def pars(url):
     response = requests.get(url)
     html = BeautifulSoup(response.text, "lxml")
     tovars = html.find_all('div', class_='product-tile-wrapper')
     for tovar in tovars:
-        name = tovar.find("div", class_="product-tile__name u-text-bodycopy u-margin-bottom--xs").text
-        opis = tovar.find("div", class_="product-tile__short-description u-margin-bottom--xs").text
+        print(tovar)
+        name = tovar.find("div", class_="product-tile__name u-text-bodycopy u-margin-bottom--xs").text.strip('\n')
+        opis = tovar.find("div", class_="product-tile__short-description u-margin-bottom--xs").text.strip('\n')
+        img_url = tovar.find('div', class_='product-tile__base-media').find('img').get('src')
+        # download(img_url)
         ins(name, opis)
 
 def main():
