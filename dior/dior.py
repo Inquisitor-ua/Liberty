@@ -7,8 +7,8 @@ def pars(url):
     html = BeautifulSoup(response.text, "lxml")
     tovars = html.find_all('div', class_='product-tile-wrapper')
     for tovar in tovars:
-        name = tovar.find_all("div", class_="product-tile__name u-text-bodycopy u-margin-bottom--xs").text
-        opis = ...
+        name = tovar.find("div", class_="product-tile__name u-text-bodycopy u-margin-bottom--xs").text
+        opis = tovar.find("div", class_="product-tile__short-description u-margin-bottom--xs").text
         ins(name, opis)
 
 def main():
