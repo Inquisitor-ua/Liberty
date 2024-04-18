@@ -5,7 +5,7 @@ from jopa import ins
 def download(url):
     response = requests.get(url)
     for value in response.iter_content(1024*1024):
-        with open('C:/users/egorm/desktop/lessons/Liberty/dior/images/'+url.split('/')[-1].strip('?sw=800'), 'wb') as file:
+        with open('C:Liberty/dior/images/'+url.split('/')[-1].strip('?sw=800'), 'wb') as file:
             file.write(value)
 
 def pars(url):
@@ -16,9 +16,11 @@ def pars(url):
         print(tovar)
         name = tovar.find("div", class_="product-tile__name u-text-bodycopy u-margin-bottom--xs").text.strip('\n')
         opis = tovar.find("div", class_="product-tile__short-description u-margin-bottom--xs").text.strip('\n')
+        ottenki = tovar.find("div", class_="swatchable-colors__count")
+        image = tovar.find("div", class_="image-container position-relative js-image-container") 
         img_url = tovar.find('div', class_='product-tile__base-media').find('img').get('src')
         # download(img_url)
-        ins(name, opis)
+        ins(name, opis, ottenki, image) 
 
 def main():
     pars(r"https://www.dior.com/ru_ru/beauty/%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6%D0%B0/%D0%B3%D1%83%D0%B1%D1%8B/%D0%B3%D1%83%D0%B1%D0%BD%D1%8B%D0%B5-%D0%BF%D0%BE%D0%BC%D0%B0%D0%B4%D1%8B")
