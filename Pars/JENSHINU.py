@@ -14,9 +14,13 @@ while i <= 6:
     response = requests.get(url, headers=headers)
     html = BeautifulSoup(response.text, 'lxml')
     cards = html.find_all("div", class_="p-4")
-    print(cards)
     for card in cards:
-        name = card.find("h4").text
-        print(name)
+        try:
+            name = card.find("h4").text
+            print(name)
+        except Exception as e:
+            print(e)
+            
+
 
 
