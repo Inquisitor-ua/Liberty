@@ -1,16 +1,18 @@
 import pyautogui as pg
 import time
-#print(pg.position())
-pg.moveTo(1101, 1042, 1)
+# print(pg.position())
+
+user = input("Введите юзернейм жертвы: ")
+pg.moveTo(373, 1065, 1)
 pg.click()
 time.sleep(1)
 pg.moveTo(141, 59, 1)
 pg.click()
-pg.typewrite("egor_chelovek",0.1)
+pg.typewrite(user,0.1)
 pg.typewrite(["enter"])
 time.sleep(1)
-pg.moveTo(1831, 986, 1)
+pg.moveTo(1600, 490, 1)
 pg.click()
 time.sleep(1)
-pg.moveTo(1600, 194, 1)
+pg.moveTo(1676, 321, 1)
 pg.click()
