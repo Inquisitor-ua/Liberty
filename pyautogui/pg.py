@@ -1,5 +1,16 @@
 import pyautogui as pg
-
-# print(pg.position())
-pg.moveTo(285, 1063, 1)
+import time
+#print(pg.position())
+pg.moveTo(1101, 1042, 1)
+pg.click()
+time.sleep(1)
+pg.moveTo(141, 59, 1)
+pg.click()
+pg.typewrite("egor_chelovek",0.1)
+pg.typewrite(["enter"])
+time.sleep(1)
+pg.moveTo(1831, 986, 1)
+pg.click()
+time.sleep(1)
+pg.moveTo(1600, 194, 1)
 pg.click()
