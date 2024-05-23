@@ -1,9 +1,9 @@
 import telebot
-import config
+import tg.config as config
 import time
 import pyautogui as pg
 from telebot import types
-import pgpg as control
+import tg.pgpg as control
 import os
 import webbrowser as wb
 from bs4 import BeautifulSoup
