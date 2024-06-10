@@ -14,28 +14,30 @@ class Appearance(Children):
         self.weight = weight
         self.height = height        
    
-   # def tunning(self, plus):
-    #    self.hp += (5 *plus)
+    def start(self):
+        print("Завести ребенка из Китая😏")
+        self.__electro()
+        self.__fuel()
+        self.__drive()
         
+    @property
+    def weight(self):
+
+    def __electro(self):
+        print("Ребенок в пути")
     
+    def __fuel(self):
+        print("Ребенок прибыл")
     
- #class appearance(children):
-     #def __init__(self, weight, height, model, color):
-         #super().__init__(model, color)
-         #self.weight = weight
-         #self.height = height
-    
-    def drive(self):
+    def __drive(self):
         print("Аукцион открыт")    
-   
-   #def fly(self):
-        #print("Полетели")
 
 chynga = Appearance("black", "brown", '88', "185", "2010", 'black')
 changa = Appearance("blonde", "green", '74', "179", "2008", 'white')
 
-changa.drive()
+changa.start()
 print(chynga.hair)
 print(chynga.color)
 print(changa.hair)
 print(changa.color)
+
