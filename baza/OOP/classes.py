@@ -10,8 +10,16 @@ class Car(Vehicle):
         self.__hp = horse_power
         self.col = col
     
-    def show_hp(self):
-        print(f"Количество hp: {self.__hp}")
+    @property
+    def hp(self):
+        return self.__hp
+    
+    @hp.setter
+    def hp(self, new):
+        if new <= 0:
+            print("Так делать нельзя!")
+        else:
+            self.__hp = new 
     
     def tunning(self, plus):
         self.__hp += (5 *plus)
@@ -46,4 +54,8 @@ bmw = Car(250, 5, 'E39 M', 'black')
 f16 = Plane(10000, True, 'F-16', 'Gray')
 
 bmw.start()
-bmw.show_hp()
+print(bmw.hp)
+bmw.hp = -20
+print(bmw.hp)
+bmw.hp = 220
+print(bmw.hp)
