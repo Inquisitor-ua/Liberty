@@ -11,7 +11,7 @@ class Appearance(Children):
         super().__init__(model, color)
         self.hair = hair
         self.eyes = eyes
-        self.weight = weight
+        self.__weight = weight
         self.height = height        
    
     def start(self):
@@ -22,6 +22,14 @@ class Appearance(Children):
         
     @property
     def weight(self):
+        return self.__weight
+    
+    @weight.setter
+    def weight(self, new):
+        if new <= 0:
+            print("отрицательный вес быть не может!")
+        else:
+            self.__weight = new 
 
     def __electro(self):
         print("Ребенок в пути")
@@ -32,12 +40,13 @@ class Appearance(Children):
     def __drive(self):
         print("Аукцион открыт")    
 
-chynga = Appearance("black", "brown", '88', "185", "2010", 'black')
-changa = Appearance("blonde", "green", '74', "179", "2008", 'white')
+chynga = Appearance("black", "brown", 88, 185, 2010, 'black')
+changa = Appearance("blonde", "green", 74, 155, 2008, 'white')
 
 changa.start()
 print(chynga.hair)
 print(chynga.color)
 print(changa.hair)
-print(changa.color)
-
+print(changa.weight)
+changa.weight = 100
+print(changa.weight)
