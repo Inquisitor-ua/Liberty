@@ -8,14 +8,30 @@
     <link rel="stylesheet" href="{% static 'web/css/index.css' %}">
 </head>
 <body>
-    <header><p class="head-foot-text">shlyapa</p></header>
-    <div class="menu">
-        <a href="{% url 'glavnaya' %}"><div class="menu-button">На главную</div></a>
-        <a href="{% url 'catalog' %}"><div class="menu-button">На каталог</div></a>
-    </div>
+    <header>
+        <div class="header">
+            <div class="head-elem"><p class="head-foot-text">Tarot_li</p></div>
+            <div class="head-elem seti">
+                <div>Ссылки на соц. сети: </div>
+                <div class="soc-set"><a href="https://t.me/tarot_lil" target="_blank"><img src="{% static 'web/img/telegram.png' %}"></a></div>
+                <div class="soc-set"><a href="https://www.tiktok.com/@tarot_lil?_t=8oQxVuHzZk8&_r=1" target="_blank"><img src="{% static 'web/img/Tiktok.png' %}"></a></div>
+                <div class="soc-set"><a href="https://www.instagram.com/tarot_li_?igsh=N3c5aXlpeWIzMG01&utm_source=qr" target="_blank"><img src="{% static 'web/img/instagram.png' %}"></a></div>
+            </div>
+        </div>
+    </header>
 
-    {% block content %}
-    {% endblock %}
+    <div class="all-content">
+        <div class="menu">
+            <a href="{% url 'glavnaya' %}"><div class="menu-button">На главную</div></a>
+            <a href="{% url 'catalog' %}"><div class="menu-button">Расклады</div></a>
+            <a href="{% url 'rasklad' %}"><div class="menu-button">Заказать расклад</div></a>
+        </div>
+
+        <div class="catalog">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
     
     <footer><p class="head-foot-text">Футер</p></footer>
 </body>

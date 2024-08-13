@@ -1,13 +1,19 @@
 from django.db import models
 
 # Create your models here.
-class Deti(models.Model):
-    name = models.CharField('Имя фамилиия', max_length=64)
-    age = models.IntegerField('Возраст')
-    sex = models.CharField("Пол", max_length=16)
+class Rasklad(models.Model):
+    name = models.CharField('Название раскладов', max_length= 100)
+    voprosi = models.CharField('Вопросы расклада', max_length=1024)
     price = models.FloatField("Цена")
     description = models.TextField('Описание')
-    photo = models.ImageField('Фото')
     date = models.DateField('Дата публикации')
     def __str__(self):
         return self.name
+    
+
+class Zapis(models.Model):
+    name = models.CharField('Имя клиента', max_length=64)
+    socset = models.CharField('Название соцсети', max_length=128)
+    rasklad = models.CharField('Название расклада', max_length=128)
+    age = models.IntegerField('Возраст')
+    about = models.TextField('Описание расклада')

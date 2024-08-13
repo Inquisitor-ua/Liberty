@@ -4,11 +4,13 @@
 
 {% block content %}
     <h1>Каталог</h1>
-    <p>
-        <grid>
-        <img></img>
-        <h3>"Чунга, 15 лет"</h3>
-        <p1></p1>
-        </grid>
-    </p>
+    <div class="all-tovars">
+    {% for rasklad in rasklads %}
+        <div class="tovar">
+            <h3>{{ rasklad.name }}</h3>
+            <h4>{{ rasklad.price }} грн</h4>
+            <p class="description">{{ rasklad.description }}</p>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Deti
+from .models import Rasklad, Zapis
 
 # Register your models here.
-admin.site.register(Deti)
+admin.site.register(Rasklad)
+admin.site.register(Zapis)

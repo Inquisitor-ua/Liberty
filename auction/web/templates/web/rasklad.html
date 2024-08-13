@@ -1,0 +1,19 @@
+{% extends 'web/base.html' %}
+
+{% block title %}Заказать расклад{% endblock %}
+
+{% block content %} 
+<h1>Заказать расклад</h1>
+<div class="forma">
+<form method="post">
+    {% csrf_token %}
+    {{ form.name }}<br>
+    {{ form.socset }}<br>
+    {{ form.age }}<br>
+    {{ form.rasklad }}<br>
+    {{ form.about }}<br>
+    {{ error }}
+    <button class="form-button">Заказать</button>
+</form>
+</div>
+{% endblock %}
