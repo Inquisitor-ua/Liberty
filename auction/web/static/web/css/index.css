@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(168, 48, 181);
+    background-color: rgb(159, 33, 185);
     margin: 0;
     padding: 0;
     color: white;
@@ -11,7 +11,7 @@ header{
     text-shadow: 1px 1px 30px black;
     border-bottom: 2px rgb(255, 255, 255) solid;
     text-align: center;
-    background-color: rgb(127, 41, 149);
+    background-color: rgb(123, 32, 146);
     padding: 20px;
 }
 .header{
@@ -51,7 +51,7 @@ p{
 .head-foot-text{
     color: white;
     margin: 0;
-    text-shadow: 1px 2px 30px rgb(145, 63, 63);
+    text-shadow: 1px 2px 30px rgb(153, 50, 204);
     font-size: 40px;
 }
 .menu{
@@ -64,12 +64,12 @@ p{
 }
 .menu-button, .form-button{
     border: 1px rgb(255, 255, 255) solid;
-    background-color: rgb(165, 71, 173);
+    background-color: rgb(186, 85, 211);
     text-align: center;
     padding: 5px;
 }
 .menu-button:hover, .form-button:hover{
-    background-color: rgb(215, 53, 215);
+    background-color: rgb(219, 112, 219);
     transition-duration: 100ms;
 }
 @font-face{
@@ -85,7 +85,7 @@ p{
     border: 1px rgb(255, 255, 255) solid;
     padding: 10px;
     border-radius: 10px;
-    background-color: rgb(226, 43, 214);
+    background-color: rgb(186, 85, 211);
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
 }
 .tovar h3{
