@@ -2,8 +2,29 @@ body{
     background-color: rgb(159, 33, 185);
     margin: 0;
     padding: 0;
+    height: 100vh;
     color: white;
     font-family: "Renju";
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe_k6gWznLD6JLhmnA4y1MpGWdZGVg1-P2Bg&s);
+    background-size: 100% 100vh;
+    background-position: center;
+    background-repeat:no-repeat;
+    /* background-size: contain; */
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный черный слой */
+    z-index: 1; /* Размещаем псевдоэлемент поверх фонового изображения */
+}
+
+body * {
+    position: relative;
+    z-index: 2; /* Элементы внутри body будут находиться над затемнением */
 }
 header{
     font-size: 30px;
@@ -11,7 +32,7 @@ header{
     text-shadow: 1px 1px 30px black;
     border-bottom: 2px rgb(255, 255, 255) solid;
     text-align: center;
-    background-color: rgb(123, 32, 146);
+    background-color: rgb(186, 85, 211);
     padding: 20px;
 }
 .header{
@@ -57,16 +78,17 @@ p{
 .menu{
     display: flex;
     width: 100%;
-    flex-direction: column;
-    width: 25%;
+    flex-direction: row;
+    width: 100%;
     flex: 1;
     justify-content: start;
 }
 .menu-button, .form-button{
     border: 1px rgb(255, 255, 255) solid;
-    background-color: rgb(186, 85, 211);
+    background-color: rgb(123, 32, 146);
     text-align: center;
     padding: 5px;
+    font-size: 20px;
 }
 .menu-button:hover, .form-button:hover{
     background-color: rgb(219, 112, 219);
@@ -93,7 +115,7 @@ p{
 }
 .all-content{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .catalog{
     flex: 3;

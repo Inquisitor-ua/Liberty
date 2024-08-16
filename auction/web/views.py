@@ -16,6 +16,7 @@ def rasklad(request):
         form = ZapisInput(request.POST)
         if form.is_valid():
             form.save()
+            
         else:
             error = 'Ошибка отправки данных'
     form = ZapisInput()
