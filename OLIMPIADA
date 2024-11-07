@@ -1,0 +1,5 @@
+import math
+n = 18
+k = 9
+paths = math.comb(n, k)
+print(paths)

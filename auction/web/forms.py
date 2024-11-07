@@ -13,7 +13,7 @@ class ZapisInput(ModelForm):
             'name': 'name'
         }),
         'socset': TextInput(attrs={
-            'placeholder': 'Ваша соц.сеть: (телеграм, инстаграм)',
+            'placeholder': 'Ваша соц.сеть',
             'class': 'rasklad-input',
             'name': 'socset'
         }),
@@ -23,12 +23,12 @@ class ZapisInput(ModelForm):
             'name': 'username'
         }),
         'rasklad':TextInput(attrs={
-            'placeholder': 'название расклада',
+            'placeholder': 'Название расклада',
             'class': 'rasklad-input',
             'name': 'rasklad'
         }),
         'about':TextInput(attrs={
-            'placeholder': 'пред.история',
+            'placeholder': 'Пред.история',
             'class': 'rasklad-input',
             'name': 'about'
         })

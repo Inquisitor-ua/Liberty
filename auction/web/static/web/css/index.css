@@ -1,26 +1,28 @@
 body{
-    background-color: rgb(159, 33, 185);
+    background: linear-gradient(180deg, #d159ee 0%, #3a183f 100%);
+    /*background-color: rgb(123, 32, 146);*/
     margin: 0;
     padding: 0;
     height: 100vh;
     color: white;
     font-family: "Renju";
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe_k6gWznLD6JLhmnA4y1MpGWdZGVg1-P2Bg&s);
+   /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe_k6gWznLD6JLhmnA4y1MpGWdZGVg1-P2Bg&s);*/
     background-size: 100% 100vh;
     background-position: center;
     background-repeat:no-repeat;
     /* background-size: contain; */
 }
-body::before {
+/*body::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный черный слой */
-    z-index: 1; /* Размещаем псевдоэлемент поверх фонового изображения */
-}
+    background-color: rgba(0, 0, 0, 0.3);*/ /* Полупрозрачный черный слой */
+    /* z-index: 1;*/  /* Размещаем псевдоэлемент поверх фонового изображения }
+    background-color: rgba(118, 107, 107, 0.3);*/
+
 
 body * {
     position: relative;
@@ -65,6 +67,7 @@ a{
 }
 h1{
     text-align: center;
+    text-shadow: 1px 1px 15px rgb(0, 0, 0);
 }
 p{
     font-weight: bolder;
@@ -72,46 +75,78 @@ p{
 .head-foot-text{
     color: white;
     margin: 0;
-    text-shadow: 1px 2px 30px rgb(153, 50, 204);
+    text-shadow: 1px 2px 30px rgb(0, 0, 0);
     font-size: 40px;
 }
 .menu{
+    text-shadow: 0px 1px 8px rgb(0, 0, 0);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     width: 100%;
     flex-direction: row;
     width: 100%;
     flex: 1;
     justify-content: start;
+    /**/
 }
-.menu-button, .form-button{
+.menu-button{
+    background: linear-gradient(90deg, #a920cb 0%, #cf79e3 46.38%, #a920cb 100%);
     border: 1px rgb(255, 255, 255) solid;
-    background-color: rgb(123, 32, 146);
+     /*background-color: rgb(123, 32, 146);*/ 
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+}
+.form-button{
+    border: 1px rgb(255, 255, 255) solid;
+    background: linear-gradient(180deg, #a920cb 100%);
     text-align: center;
     padding: 5px;
     font-size: 20px;
 }
 .menu-button:hover, .form-button:hover{
-    background-color: rgb(219, 112, 219);
+    /*background-color: rgb(219, 112, 219);*/
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 1, 1);
     transition-duration: 100ms;
 }
 @font-face{
     font-family: 'Renju';
     src: url("/fonts/Renju") format('otf')
 }
-.descriprion{
-    font-size: 20px;
-}
 .tovar{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    width: 150px;
+    width: 275px;
     border: 1px rgb(255, 255, 255) solid;
     padding: 10px;
     border-radius: 10px;
     background-color: rgb(186, 85, 211);
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
 }
-.tovar h3{
+.tovar h3, .tovar h4, .catalog h1{
     font-weight: bolder;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 0px 1px 8px rgb(0, 0, 0);
+    font-family: 'Renju';
+    src: url("/fonts/Renju") format('otf');
+    letter-spacing: 2px;
+}
+.tovar h4{
+    text-shadow: 1px 1px 15px rgb(0, 0, 0);
+}
+.tovar button{
+    font-size: 24px;
+    color: white;
+    background-color: rgb(151, 64, 172);
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
 }
 .all-content{
     display: flex;
@@ -119,6 +154,20 @@ p{
 }
 .catalog{
     flex: 3;
+}
+.catalog h1{
+    font-size: 40px;
+    text-shadow: 0px 1px 8px rgba(121, 121, 121, 0.447);
+}
+.description{
+    font-size: 20px;
+    height: 50%;
+    /* text-shadow: 1px 1px 50px rgb(0, 0, 0); */
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.514);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 10px;
 }
 footer{
     text-align: center;
@@ -131,9 +180,9 @@ footer p{
 }
 .rasklad-input{
     margin: 10px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    width: 400px;
+    width: 350px;
     height: 30px;
     border-radius: 7px;
     border: 2px rgb(255, 255, 255) solid;
@@ -147,10 +196,16 @@ footer p{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    border: 1px rgb(255, 255, 255) solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
 }
 .forma button{
-    font-size: 20px;
+    font-size: 24px;
     color: white;
+    background-color: rgb(151, 64, 172);
+    border-radius: 5px;
 }
 .all-tovars{
     padding: 20px;
@@ -158,3 +213,6 @@ footer p{
     flex-direction: row;
     justify-content: space-evenly;
 }
+/* .animation{
+    transition: 
+} */

@@ -4,7 +4,7 @@ from django.db import models
 class Rasklad(models.Model):
     name = models.CharField('Название раскладов', max_length= 100)
     voprosi = models.CharField('Вопросы расклада', max_length=1024)
-    price = models.FloatField("Цена")
+    price = models.IntegerField("Цена")
     description = models.TextField('Описание')
     date = models.DateField('Дата публикации')
     def __str__(self):

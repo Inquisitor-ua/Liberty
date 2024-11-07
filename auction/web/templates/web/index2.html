@@ -8,8 +8,9 @@
     {% for rasklad in rasklads %}
         <div class="tovar">
             <h3>{{ rasklad.name }}</h3>
+            <p class="description">{{ rasklad.description|linebreaksbr }}</p>
             <h4>{{ rasklad.price }} грн</h4>
-            <p class="description">{{ rasklad.description }}</p>
+            <button class="form-button"><a href="{% url 'rasklad' %}">Заказать</a></button>
         </div>
     {% endfor %}
     </div>
