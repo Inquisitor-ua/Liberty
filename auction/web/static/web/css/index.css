@@ -172,7 +172,54 @@ p{
     justify-content: start; */
     flex: 1;
 }
-
+.pre-osnova{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.osnova{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    border: 1px rgb(255, 255, 255) solid;
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
+    font-size: 20px;
+    background-color: rgb(186, 85, 211);
+    border-radius: 10px;
+}
+.in-osnova{
+    width: 25%;
+    border: 1px rgb(255, 255, 255) solid;
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
+    background-color: rgb(138, 63, 157);
+    padding: 20px;
+    border-radius: 10px;
+    transition: all ease-in 0.1s;
+    
+}
+.in-osnova:hover{
+    transform: scale(1.05);
+}
+.in-osnova div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.in-osnova h3{
+    font-size: 30px;
+    margin: 0;
+}
+.in-osnova p{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .catalog h1{
     font-size: 40px;
     text-shadow: 1px 2px 30px rgb(0, 0, 0);
@@ -190,10 +237,12 @@ p{
 }
 footer{
     text-align: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 1px;
+    height: 150px;
+    background-color: rgb(52, 24, 59);
+    border-top: 1px white solid;
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
+    color: white;
 }
 footer p{
     padding: 10px;
@@ -207,6 +256,7 @@ footer p{
     border-radius: 7px;
     border: 2px rgb(255, 255, 255) solid;
     background-color: transparent;
+    color: white;
 }
 .rasklad-input::placeholder{
     color: white;
