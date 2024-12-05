@@ -17,3 +17,14 @@ class Zapis(models.Model):
     rasklad = models.CharField('Название расклада', max_length=128)
     age = models.IntegerField('Возраст')
     about = models.TextField('Описание расклада')
+    def __str__(self):
+        return self.name
+    
+
+class Otzuvu(models.Model):
+    name = models.CharField('Имя пользователя', max_length= 100)
+    text = models.TextField('Отзыв')
+    date = models.DateField('Дата публикации')
+    mark = models.IntegerField('Оценка')
+    def __str__(self):
+        return self.name

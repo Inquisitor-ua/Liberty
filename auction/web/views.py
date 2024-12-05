@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Rasklad
+from .models import Rasklad, Otzuvu
 from .forms import ZapisInput
 import telebot
 
@@ -27,3 +27,7 @@ def rasklad(request):
     form = ZapisInput()
     data = {'form': form, 'error': error}
     return render(request, "web/rasklad.html", data)
+
+def otzuvu(request):
+    data = Otzuvu.objects.all()
+    return render(request, "web/otzuvu.html", {'otzuvu': data})
