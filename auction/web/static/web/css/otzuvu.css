@@ -1,0 +1,39 @@
+.main-content{
+    border: 2px black solid;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+.catalog{
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.main-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+.otzuv-form{
+    height: 400px;
+    width: 100%;
+    flex: 2;
+    border: 1px black solid;
+}
+.rating{
+    height: 400px;
+    width: 100%;
+    flex: 1;
+    border: 1px black solid;
+}
