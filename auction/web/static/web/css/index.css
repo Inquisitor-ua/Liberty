@@ -166,6 +166,9 @@ p{
     text-align: center;
     width: 50%;
 }
+#catalog-h1{
+    margin-bottom: 0;
+}
 .all-content{
     /* display: flex;
     flex-direction: column;
