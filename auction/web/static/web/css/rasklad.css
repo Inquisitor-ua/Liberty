@@ -1,0 +1,28 @@
+.rasklad-layout{
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    flex-direction: row;
+    align-items: center;
+}
+.rasklad-left{
+    flex: 2;
+}
+.rasklad-right{
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+.forma{
+    width: 100%;
+}
+.forma form{
+    width: 100%;
+}
+.rasklad-input{
+    width: 90%;
+}
+form img{
+    width: 200px;
+    height: auto;
+}

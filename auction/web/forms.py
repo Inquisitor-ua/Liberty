@@ -9,7 +9,7 @@ class ZapisInput(ModelForm):
 
         widgets = {'name':TextInput(attrs={
             'placeholder': 'Имя',
-            'class': 'rasklad-input',
+            'class': 'rasklad-input with-photo',
             'name': 'name'
         }),
         'socset': TextInput(attrs={
