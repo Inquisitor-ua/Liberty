@@ -5,7 +5,7 @@ class ZapisInput(ModelForm):
     class Meta:
         model = Zapis
 
-        fields = ['name', 'socset', 'age', 'rasklad', 'about']
+        fields = ['sex','name', 'socset', 'age', 'rasklad', 'about']
 
         widgets = {'name':TextInput(attrs={
             'placeholder': 'Имя',

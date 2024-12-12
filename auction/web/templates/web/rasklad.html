@@ -12,6 +12,7 @@
         <form method="post">
             <img src="{% static 'web/img/man-photo.jpg' %}" id="person-image">
             {% csrf_token %}
+            {{ form.sex }}
             {{ form.name }}<br>
             {{ form.socset }}<br>
             {{ form.age }}<br>
