@@ -13,6 +13,7 @@ class Rasklad(models.Model):
 
 class Zapis(models.Model):
     name = models.CharField('Имя клиента', max_length=64)
+    sex = models.CharField('Пол', max_length=64)
     socset = models.CharField('Название соцсети', max_length=128)
     rasklad = models.CharField('Название расклада', max_length=128)
     age = models.IntegerField('Возраст')

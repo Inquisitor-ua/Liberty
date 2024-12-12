@@ -23,15 +23,20 @@
         </form>
         </div>
     </div>
-    <div class="rasklad-right"></div>
+    <div class="rasklad-right">
+
+    </div>
 </div>
 <script>
     var image = document.getElementById('person-image');
+    var sex = document.getElementById('sex-field');
     image.addEventListener('click', () => {
         console.log(image.getAttribute('src'));
         if (image.getAttribute('src') == "{% static 'web/img/man-photo.jpg' %}"){
+            sex.setAttribute('value', 'Женский');
             image.setAttribute('src', "{% static 'web/img/woman-photo.jpg' %}");
         }   else if (image.getAttribute('src') == "{% static 'web/img/woman-photo.jpg' %}"){
+            sex.setAttribute('value', 'Мужской');
             image.setAttribute('src', "{% static 'web/img/man-photo.jpg' %}");
         }
     })

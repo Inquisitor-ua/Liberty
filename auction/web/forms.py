@@ -1,5 +1,5 @@
 from .models import Zapis
-from django.forms import ModelForm, TextInput, NumberInput
+from django.forms import ModelForm, TextInput, NumberInput, HiddenInput
 
 class ZapisInput(ModelForm):
     class Meta:
@@ -7,7 +7,13 @@ class ZapisInput(ModelForm):
 
         fields = ['sex','name', 'socset', 'age', 'rasklad', 'about']
 
-        widgets = {'name':TextInput(attrs={
+        widgets = {'sex': HiddenInput(attrs={
+            'class': 'rasklad-input',
+            'name': 'sex',
+            'value': 'Мужской',
+            'id': 'sex-field'
+        }),
+        'name':TextInput(attrs={
             'placeholder': 'Имя',
             'class': 'rasklad-input with-photo',
             'name': 'name'

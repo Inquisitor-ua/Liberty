@@ -7,6 +7,7 @@
 }
 .rasklad-left{
     flex: 2;
+    margin-right: 20px;
 }
 .rasklad-right{
     flex: 1;
@@ -25,4 +26,18 @@
 form img{
     width: 200px;
     height: auto;
+}
+.rasklad-right{
+    width: 100%;
+    margin-top: 100px;
+    height: 614px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px rgb(255, 255, 255) solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.077);
 }
