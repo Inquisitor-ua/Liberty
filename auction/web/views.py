@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
 from .forms import ZapisInput
@@ -11,10 +11,16 @@ def home(request):
 
 def two(request):
     data = Rasklad.objects.all()
-    return render(request, "web/index2.html", {'rasklads': data})
+    return render(request, "web/catalog.html", {'rasklads': data})
 
-def rasklad(request):
+def rasklad(request, rasklad_id = 0):
     error = ''
+    if rasklad_id == 0:
+        vibor = 'Самый популярный расклад:'
+        rasklad = get_object_or_404(Rasklad, name='Что он думает обо мне?')
+    else:
+        vibor = 'Вы выбрали расклад:'
+        rasklad = get_object_or_404(Rasklad, id=rasklad_id)
     if request.method == 'POST':
         form = ZapisInput(request.POST)
         if form.is_valid():
@@ -27,7 +33,7 @@ def rasklad(request):
             form = ZapisInput()
             error = 'Ошибка отправки данных'
     form = ZapisInput()
-    data = {'form': form, 'error': error}
+    data = {'form': form, 'error': error, 'rasklad': rasklad, 'vibor': vibor}
     return render(request, "web/rasklad.html", data)
 
 def otzuvu(request):

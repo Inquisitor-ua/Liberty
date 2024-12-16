@@ -10,7 +10,7 @@
             <h3>{{ rasklad.name }}</h3>
             <p class="description">{{ rasklad.description|linebreaksbr }}</p>
             <h4>{{ rasklad.price }} грн</h4>
-            <button class="form-button"><a href="{% url 'rasklad' %}">Заказать</a></button>
+            <button class="form-button"><a href="{% url 'rasklad' rasklad.id %}">Заказать</a></button>
         </div>
     {% endfor %}
     </div>
