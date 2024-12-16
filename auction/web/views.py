@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
 from .forms import ZapisInput
@@ -21,8 +21,10 @@ def rasklad(request):
             form.save()
             bot = telebot.TeleBot(TOKEN)
             msg = f"Имя: {form.data.get('name')}\nСоцсеть: {form.data.get('socset')}\nВозраст: {form.data.get('age')}\nРасклад: {form.data.get('rasklad')}\nОписание: {form.data.get('about')}"
-            bot.send_message(892951051, msg)
+            bot.send_message(892951051, msg) #892951051
+            return redirect('rasklad')
         else:
+            form = ZapisInput()
             error = 'Ошибка отправки данных'
     form = ZapisInput()
     data = {'form': form, 'error': error}
