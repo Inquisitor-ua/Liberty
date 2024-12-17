@@ -11,7 +11,6 @@
 }
 .rasklad-right{
     flex: 1;
-    height: 100%;
     width: 100%;
 }
 .forma{
@@ -22,15 +21,19 @@
 }
 .rasklad-input{
     width: 90%;
+    transition: background-color 0.3s ease;
 }
 form img{
     width: 200px;
     height: auto;
+    transition: box-shadow 0.3s ease;
+}
+form img:hover{
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
 }
 .rasklad-right{
     width: 100%;
-    margin-top: 100px;
-    height: 614px;
+    align-self: stretch;
     display: flex;
     justify-content: center;
     align-items: center;

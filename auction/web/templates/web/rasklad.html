@@ -9,18 +9,29 @@
     <div class="rasklad-left">
         <h1>Заказать расклад</h1>
         <div class="forma">
-        <form method="post">
-            <img src="{% static 'web/img/man-photo.jpg' %}" id="person-image">
-            {% csrf_token %}
-            {{ form.sex }}
-            {{ form.name }}<br>
-            {{ form.socset }}<br>
-            {{ form.age }}<br>
-            {{ form.rasklad }}<br>
-            {{ form.about }}<br>
-            {{ error }}
-            <button class="form-button">Заказать</button>
-        </form>
+            <form method="post">
+                <img src="{% static 'web/img/man-photo.jpg' %}" id="person-image">
+                {% csrf_token %}
+                {{ form.sex }}
+                <div class="field-container">
+                    {{ form.name }}
+                </div>
+                <div class="field-container">
+                    {{ form.socset }}
+                </div>
+                <div class="field-container">
+                    {{ form.age }}
+                </div>
+                <div class="field-container">
+                    {{ form.rasklad }}
+                </div>
+                <div class="field-container">
+                    {{ form.about }}
+                </div>
+
+                {{ error }}
+                <button class="form-button" type="submit">Заказать</button>
+            </form>
         </div>
     </div>
     <div class="rasklad-right">
@@ -30,6 +41,47 @@
         <h4>{{ rasklad.price }} грн</h4>
     </div>
 </div>
+<style>
+    .field-container.valid .rasklad-input:focus {
+        background-color: rgba(0, 255, 0, 0.388);
+        outline: none;
+    }
+    .field-container.invalid .rasklad-input:focus {
+        background-color: rgba(255, 0, 0, 0.23);
+        outline: none;
+    }
+    /* Стили для контейнеров полей с валидацией */
+    .field-container {
+        position: relative;
+        margin-bottom: 1em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .field-container.valid::before {
+        content: "✔";
+        color: green;
+        position: absolute;
+        left: 6%;
+        top: 50%;
+        transform: translateY(-53%);
+    }
+
+    .field-container.invalid::before {
+        content: "✖";
+        color: red;
+        position: absolute;
+        left: 6%;
+        top: 50%;
+        transform: translateY(-53%);
+    }
+
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
 <script>
     var image = document.getElementById('person-image');
     var sex = document.getElementById('sex-field');
@@ -43,5 +95,73 @@
             image.setAttribute('src', "{% static 'web/img/man-photo.jpg' %}");
         }
     })
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const form = document.querySelector('.forma form');
+        const inputs = form.querySelectorAll('input, select, textarea');
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        function validateInput(input) {
+            const value = input.value.trim();
+            const name = input.name;
+
+            let isValid = false;
+            switch(name) {
+                case 'name':
+                    isValid = value.length >= 2;
+                    break;
+                case 'socset':
+                    isValid = value.length >= 2; 
+                    break;
+                case 'age':
+                    isValid = /^[1-9]\d*$/.test(value); // Положительное число
+                    break;
+                case 'rasklad':
+                    isValid = value.length > 0; // не пустое
+                    break;
+                default:
+                    isValid = value !== '';
+                    break;
+            }
+
+            return isValid;
+        }
+
+        function updateFieldState(input) {
+            const container = input.closest('.field-container');
+            if (!container) return;
+            if (validateInput(input)) {
+                container.classList.remove('invalid');
+                container.classList.add('valid');
+            } else {
+                container.classList.remove('valid');
+                container.classList.add('invalid');
+            }
+        }
+
+        function updateSubmitButtonState() {
+            const anyInvalid = Array.from(inputs).some(input => !validateInput(input));
+            submitButton.disabled = anyInvalid;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                updateFieldState(input);
+                updateSubmitButtonState();
+            });
+        });
+
+        inputs.forEach(input => {
+            updateFieldState(input);
+        });
+        updateSubmitButtonState();
+
+        form.addEventListener('submit', (e) => {
+            if (submitButton.disabled) {
+                e.preventDefault();
+            }
+        });
+    });
 </script>
 {% endblock %}

@@ -15,24 +15,25 @@ def two(request):
 
 def rasklad(request, rasklad_id = 0):
     error = ''
-    if rasklad_id == 0:
-        vibor = 'Самый популярный расклад:'
-        rasklad = get_object_or_404(Rasklad, name='Что он думает обо мне?')
-    else:
-        vibor = 'Вы выбрали расклад:'
-        rasklad = get_object_or_404(Rasklad, id=rasklad_id)
     if request.method == 'POST':
         form = ZapisInput(request.POST)
         if form.is_valid():
             form.save()
             bot = telebot.TeleBot(TOKEN)
-            msg = f"Имя: {form.data.get('name')}\nСоцсеть: {form.data.get('socset')}\nВозраст: {form.data.get('age')}\nРасклад: {form.data.get('rasklad')}\nОписание: {form.data.get('about')}"
-            bot.send_message(892951051, msg) #892951051
+            msg = f"Имя: {form.data.get('name')}\nПол: {form.data.get('sex')}\nСоцсеть: {form.data.get('socset')}\nВозраст: {form.data.get('age')}\nРасклад: {form.data.get('rasklad')}\nОписание: {form.data.get('about')}"
+            bot.send_message(496615893, msg) #892951051
             return redirect('rasklad')
         else:
             form = ZapisInput()
             error = 'Ошибка отправки данных'
-    form = ZapisInput()
+    if rasklad_id == 0:
+        vibor = 'Самый популярный расклад:'
+        rasklad = get_object_or_404(Rasklad, name='Что он думает обо мне?')
+        form = ZapisInput()
+    else:
+        vibor = 'Вы выбрали расклад:'
+        rasklad = get_object_or_404(Rasklad, id=rasklad_id)
+        form = ZapisInput(initial={"rasklad": rasklad.name})
     data = {'form': form, 'error': error, 'rasklad': rasklad, 'vibor': vibor}
     return render(request, "web/rasklad.html", data)
 
