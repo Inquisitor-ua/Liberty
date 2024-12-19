@@ -1,5 +1,27 @@
-from .models import Zapis
+from .models import Zapis, Otzuvu
 from django.forms import ModelForm, TextInput, NumberInput, HiddenInput
+
+class OtzivInput(ModelForm):
+    class Meta:
+        model = Otzuvu
+        
+        fields = ['name', 'text', 'mark']
+        
+        widgets = {'name': TextInput(attrs={
+            'class': ...,
+            'name': 'name',
+            'placeholder': 'Имя'
+        }),
+                   'text': TextInput(attrs={
+            'class': ...,
+            'name': 'text',
+            'placeholder': 'Отзыв'
+        }),
+                   'mark': HiddenInput(attrs={
+            'class': ...,
+            'name': 'mark',
+            'id': 'mark'
+        }),}
 
 class ZapisInput(ModelForm):
     class Meta:

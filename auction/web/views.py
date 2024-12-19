@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
-from .forms import ZapisInput
+from .forms import ZapisInput, OtzivInput
 import telebot
 
 TOKEN = "7291448617:AAE0-N7lM1y5zWUOfgj7lwE_JFvYVivE1VY"
@@ -39,4 +39,5 @@ def rasklad(request, rasklad_id = 0):
 
 def otzuvu(request):
     data = Otzuvu.objects.all()
-    return render(request, "web/otzuvu.html", {'otzuvu': data})
+    form = OtzivInput()
+    return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form})
