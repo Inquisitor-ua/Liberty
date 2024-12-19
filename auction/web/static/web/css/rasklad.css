@@ -11,7 +11,6 @@
 }
 .rasklad-right{
     flex: 1;
-    height: 100%;
     width: 100%;
 }
 .forma{
@@ -22,22 +21,38 @@
 }
 .rasklad-input{
     width: 90%;
+    transition: background-color 0.3s ease;
 }
 form img{
     width: 200px;
     height: auto;
+    transition: box-shadow 0.3s ease;
+}
+form img:hover{
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
 }
 .rasklad-right{
     width: 100%;
-    margin-top: 100px;
-    height: 614px;
+    align-self: stretch;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 1px rgb(255, 255, 255) solid;
     padding: 10px;
+    padding-left: 20px;
     border-radius: 10px;
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.077);
+}
+.rasklad-right h4{
+    font-size: 30px;
+}
+.description_ras{
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+.vibor{
+    text-align: center;
 }
