@@ -11,7 +11,7 @@ def home(request):
 
 def two(request):
     data = Rasklad.objects.all()
-    return render(request, "web/index2.html", {'rasklads': data})
+    return render(request, "web/catalog.html", {'rasklads': data})
 
 def rasklad(request):
     error = ''
