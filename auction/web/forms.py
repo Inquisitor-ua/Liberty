@@ -5,23 +5,22 @@ class OtzivInput(ModelForm):
     class Meta:
         model = Otzuvu
         
-        fields = ['name', 'text', 'mark']
+        fields = ['name', 'text', 'mark',]
         
         widgets = {'name': TextInput(attrs={
-            'class': ...,
+            'class': 'rasklad-input otzuv-input',
             'name': 'name',
             'placeholder': 'Имя'
         }),
                    'text': TextInput(attrs={
-            'class': ...,
+            'class': 'rasklad-input',
             'name': 'text',
             'placeholder': 'Отзыв'
         }),
                    'mark': HiddenInput(attrs={
-            'class': ...,
             'name': 'mark',
             'id': 'mark'
-        }),}
+        })}
 
 class ZapisInput(ModelForm):
     class Meta:
