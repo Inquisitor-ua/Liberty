@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
 from .forms import ZapisInput, OtzivInput
 import telebot
+import datetime
 
 TOKEN = "7291448617:AAE0-N7lM1y5zWUOfgj7lwE_JFvYVivE1VY"
 # Create your views here.
@@ -39,5 +40,17 @@ def rasklad(request, rasklad_id = 0):
 
 def otzuvu(request):
     data = Otzuvu.objects.all()
-    form = OtzivInput()
-    return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form})
+    error = ''
+    if request.method == 'POST':
+        form = OtzivInput(request.POST)
+        if form.is_valid():
+            form.save()
+            bot = telebot.TeleBot(TOKEN)
+            msg = f"Новый отзыв!\nИмя: {form.data.get('name')}\nОтзыв: {form.data.get('text')}\nОценка: {form.data.get('mark')}"
+            bot.send_message(496615893, msg) #892951051
+            return redirect('otzuvu')
+        else:
+            error = 'Ошибка отправки данных'
+    # time = datetime.date.today().strftime('%d-%m-%Y')
+    form = OtzivInput(initial={"mark": 5})
+    return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form, 'error': error})

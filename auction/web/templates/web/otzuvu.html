@@ -8,6 +8,7 @@
             <div class="otzuv-form">
                 <h1>Написать отзыв</h1>
                 <form method="post">
+                    {% csrf_token %}
                     <div class="form-block">
                         <div class="form-input">
                             {{ form.name }}
@@ -23,7 +24,9 @@
                             <span class="star"></span>
                         </div>
                         {{ form.mark }}
+                        <button class="form-button" type="submit">Отправить</button>
                     </div>
+                    {{ error }}
                 </form>
             </div>
             <div class="rating"></div>

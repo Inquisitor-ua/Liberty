@@ -25,7 +25,6 @@ class Zapis(models.Model):
 class Otzuvu(models.Model):
     name = models.CharField('Имя пользователя', max_length= 100)
     text = models.TextField('Отзыв')
-    date = models.DateField('Дата публикации')
     mark = models.IntegerField('Оценка')
     def __str__(self):
         return self.name
