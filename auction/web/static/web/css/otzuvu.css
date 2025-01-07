@@ -10,13 +10,12 @@
     padding: 20px;
 }
 .catalog{
-    max-width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
     padding: 20px;
+    margin: 0;
 }
 .main-top{
     display: flex;
@@ -77,4 +76,33 @@
     color: white;
     background-color: rgb(151, 64, 172);
     border-radius: 5px;
+}
+
+/* Секция отзывов */
+.otzuvu-spisok{
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: visible;
+    width: auto;
+}
+.otzuv-karta{
+    height: 250px;
+    width: 600px;
+    padding: 10px;
+    margin-right: 25px;
+    border: 1px black solid;
+}
+.name-mark{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.otzuv-text{
+    font-size: 20px;
 }

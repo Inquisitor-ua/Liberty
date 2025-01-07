@@ -33,4 +33,18 @@
         </div>
         <div class="main-bottom"></div>
     </div>
+
+    <div class="otzuvu-spisok">
+        {% for otzuv in otzuvu %}
+            <div class="otzuv-karta">
+                <div class="name-mark">
+                    <div>{{ otzuv.name }}</div>
+                    <div>{{ otzuv.mark }}</div>
+                </div>
+                <div class="otzuv-text">
+                    <div>{{ otzuv.text }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
