@@ -52,5 +52,5 @@ def otzuvu(request):
         else:
             error = 'Ошибка отправки данных'
     # time = datetime.date.today().strftime('%d-%m-%Y')
-    form = OtzivInput(initial={"mark": 5})
+    form = OtzivInput(initial={"mark_speed": 1, 'mark_trak': 1, 'mark_all': 1})
     return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form, 'error': error})

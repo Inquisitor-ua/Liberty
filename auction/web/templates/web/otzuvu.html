@@ -16,12 +16,36 @@
                         <div class="form-input">
                             {{ form.text }}
                         </div>
-                        <div>
-                            <span class="star"></span>
-                            <span class="star"></span>
-                            <span class="star"></span>
-                            <span class="star"></span>
-                            <span class="star"></span>
+                        <div class="marks">
+                            <div><label>Скорость ответа: </label>
+                                <div>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>{{ otzuv.mark_speed }}
+                            
+                            <div><label>Трактовка ответа: </label>
+                                <div>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>{{ otzuv.mark_trak }}
+
+                            <div><label>Общее впечатление: </label>
+                                <div>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>{{ otzuv.mark_all }}
                         </div>
                         {{ form.mark }}
                         <button class="form-button" type="submit">Отправить</button>
@@ -39,7 +63,6 @@
             <div class="otzuv-karta">
                 <div class="name-mark">
                     <div>{{ otzuv.name }}</div>
-                    <div>{{ otzuv.mark }}</div>
                 </div>
                 <div class="otzuv-text">
                     <div>{{ otzuv.text }}</div>

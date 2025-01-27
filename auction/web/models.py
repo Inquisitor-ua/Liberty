@@ -25,6 +25,8 @@ class Zapis(models.Model):
 class Otzuvu(models.Model):
     name = models.CharField('Имя пользователя', max_length= 100)
     text = models.TextField('Отзыв')
-    mark = models.IntegerField('Оценка')
+    mark_speed = models.IntegerField('Скорость ответа')
+    mark_trak = models.IntegerField('Трактовка ответа')
+    mark_all = models.IntegerField('Общее впечатление')
     def __str__(self):
         return self.name

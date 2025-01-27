@@ -5,7 +5,7 @@ class OtzivInput(ModelForm):
     class Meta:
         model = Otzuvu
         
-        fields = ['name', 'text', 'mark',]
+        fields = ['name', 'text', 'mark_speed', 'mark_trak', 'mark_all']
         
         widgets = {'name': TextInput(attrs={
             'class': 'rasklad-input otzuv-input',
@@ -17,9 +17,17 @@ class OtzivInput(ModelForm):
             'name': 'text',
             'placeholder': 'Отзыв'
         }),
-                   'mark': HiddenInput(attrs={
-            'name': 'mark',
-            'id': 'mark'
+                   'mark_speed': HiddenInput(attrs={
+            'name': 'mark_speed',
+            'class': 'mark'
+        }),
+                   'mark_trak': HiddenInput(attrs={
+            'name': 'mark_trak',
+            'class': 'mark'
+        }),
+                   'mark_all': HiddenInput(attrs={
+            'name': 'mark_all',
+            'class': 'mark'
         })}
 
 class ZapisInput(ModelForm):
