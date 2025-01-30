@@ -12,42 +12,46 @@
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-block">
-                        <div class="form-input">
-                            {{ form.name }}
-                        </div>
-                        <div class="form-input">
-                            {{ form.text }}
-                        </div>
-                        <div class="marks">
-                            <div><label>Скорость ответа: </label>
-                                <div>
-                                    <span class="star mark_speed" data-value="1"></span>
-                                    <span class="star mark_speed" data-value="2"></span>
-                                    <span class="star mark_speed" data-value="3"></span>
-                                    <span class="star mark_speed" data-value="4"></span>
-                                    <span class="star mark_speed" data-value="5"></span>
+                        <div class="input--star">
+                            <div class="two-input">
+                                <div class="form-input">
+                                    {{ form.name }}
                                 </div>
-                            </div>{{ form.mark_speed }}
-                            
-                            <div><label>Трактовка ответа: </label>
-                                <div>
-                                    <span class="star mark_trak" data-value="1"></span>
-                                    <span class="star mark_trak" data-value="2"></span>
-                                    <span class="star mark_trak" data-value="3"></span>
-                                    <span class="star mark_trak" data-value="4"></span>
-                                    <span class="star mark_trak" data-value="5"></span>
+                                <div class="form-input">
+                                    {{ form.text }}
                                 </div>
-                            </div>{{ form.mark_trak }}
+                            </div>
+                            <div class="marks">
+                                <div><label>Скорость ответа: </label>
+                                    <div>
+                                        <span class="star mark_speed" data-value="1"></span>
+                                        <span class="star mark_speed" data-value="2"></span>
+                                        <span class="star mark_speed" data-value="3"></span>
+                                        <span class="star mark_speed" data-value="4"></span>
+                                        <span class="star mark_speed" data-value="5"></span>
+                                    </div>
+                                </div>{{ form.mark_speed }}
+                                
+                                <div><label>Трактовка ответа: </label>
+                                    <div>
+                                        <span class="star mark_trak" data-value="1"></span>
+                                        <span class="star mark_trak" data-value="2"></span>
+                                        <span class="star mark_trak" data-value="3"></span>
+                                        <span class="star mark_trak" data-value="4"></span>
+                                        <span class="star mark_trak" data-value="5"></span>
+                                    </div>
+                                </div>{{ form.mark_trak }}
 
-                            <div><label>Общее впечатление: </label>
-                                <div>
-                                    <span class="star mark_all" data-value="1"></span>
-                                    <span class="star mark_all" data-value="2"></span>
-                                    <span class="star mark_all" data-value="3"></span>
-                                    <span class="star mark_all" data-value="4"></span>
-                                    <span class="star mark_all" data-value="5"></span>
-                                </div>
-                            </div>{{ form.mark_all }}
+                                <div><label>Общее впечатление: </label>
+                                    <div>
+                                        <span class="star mark_all" data-value="1"></span>
+                                        <span class="star mark_all" data-value="2"></span>
+                                        <span class="star mark_all" data-value="3"></span>
+                                        <span class="star mark_all" data-value="4"></span>
+                                        <span class="star mark_all" data-value="5"></span>
+                                    </div>
+                                </div>{{ form.mark_all }}
+                            </div>
                         </div>
                         <button class="form-button" type="submit">Отправить</button>
                     </div>
