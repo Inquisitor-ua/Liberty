@@ -15,6 +15,13 @@
             height: 30px;
             background-image: url('{% static 'web/img/empty_star.png' %}');
             background-size: 100%;
+            transition: all 0.1s ease;
+        }
+        .star:hover{
+            background-image: url('{% static 'web/img/fullfill_star.png' %}');
+        }
+        .filled{
+            background-image: url('{% static 'web/img/fullfill_star.png' %}');
         }
     </style>
 </head>
@@ -47,5 +54,7 @@
     
     {% block footer %}{% endblock %}
     <link rel="stylesheet" href="{% static 'web/js/index.js' %}">
+    <link rel="stylesheet" href="{% static 'web/js/otzuvu.js' %}">
+    {% block scripts %}{% endblock %}
 </body>
 </html>

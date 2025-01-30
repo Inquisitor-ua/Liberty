@@ -46,7 +46,7 @@ def otzuvu(request):
         if form.is_valid():
             form.save()
             bot = telebot.TeleBot(TOKEN)
-            msg = f"Новый отзыв!\nИмя: {form.data.get('name')}\nОтзыв: {form.data.get('text')}\nОценка: {form.data.get('mark')}"
+            msg = f"Новый отзыв!\nИмя: {form.data.get('name')}\nОтзыв: {form.data.get('text')}\nСкорость ответа: {form.data.get('mark_speed')}\nТрактовка ответа: {form.data.get('mark_trak')}\nОбщее впечатление: {form.data.get('mark_all')}"
             bot.send_message(496615893, msg) #892951051
             return redirect('otzuvu')
         else:

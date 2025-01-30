@@ -86,7 +86,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    overflow: visible;
+    overflow-x:auto;
     width: auto;
 }
 

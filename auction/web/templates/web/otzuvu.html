@@ -2,6 +2,8 @@
 
 {% block title %}Главная страница{% endblock %}
 
+{% load static %}
+
 {% block content %}
     <div class="main-content">
         <div class="main-top">
@@ -19,35 +21,34 @@
                         <div class="marks">
                             <div><label>Скорость ответа: </label>
                                 <div>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
+                                    <span class="star mark_speed" data-value="1"></span>
+                                    <span class="star mark_speed" data-value="2"></span>
+                                    <span class="star mark_speed" data-value="3"></span>
+                                    <span class="star mark_speed" data-value="4"></span>
+                                    <span class="star mark_speed" data-value="5"></span>
                                 </div>
-                            </div>{{ otzuv.mark_speed }}
+                            </div>{{ form.mark_speed }}
                             
                             <div><label>Трактовка ответа: </label>
                                 <div>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
+                                    <span class="star mark_trak" data-value="1"></span>
+                                    <span class="star mark_trak" data-value="2"></span>
+                                    <span class="star mark_trak" data-value="3"></span>
+                                    <span class="star mark_trak" data-value="4"></span>
+                                    <span class="star mark_trak" data-value="5"></span>
                                 </div>
-                            </div>{{ otzuv.mark_trak }}
+                            </div>{{ form.mark_trak }}
 
                             <div><label>Общее впечатление: </label>
                                 <div>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
-                                    <span class="star"></span>
+                                    <span class="star mark_all" data-value="1"></span>
+                                    <span class="star mark_all" data-value="2"></span>
+                                    <span class="star mark_all" data-value="3"></span>
+                                    <span class="star mark_all" data-value="4"></span>
+                                    <span class="star mark_all" data-value="5"></span>
                                 </div>
-                            </div>{{ otzuv.mark_all }}
+                            </div>{{ form.mark_all }}
                         </div>
-                        {{ form.mark }}
                         <button class="form-button" type="submit">Отправить</button>
                     </div>
                     {{ error }}
@@ -70,4 +71,8 @@
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'web/js/otzuvu.js' %}"></script>
 {% endblock %}
