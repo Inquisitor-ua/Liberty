@@ -1,5 +1,5 @@
 from .models import Zapis, Otzuvu
-from django.forms import ModelForm, TextInput, NumberInput, HiddenInput
+from django.forms import ModelForm, TextInput, NumberInput, HiddenInput, Textarea
 
 class OtzivInput(ModelForm):
     class Meta:
@@ -12,10 +12,11 @@ class OtzivInput(ModelForm):
             'name': 'name',
             'placeholder': 'Имя'
         }),
-                   'text': TextInput(attrs={
+                   'text': Textarea(attrs={
             'class': 'rasklad-input',
             'name': 'text',
-            'placeholder': 'Отзыв'
+            'placeholder': 'Отзыв',
+            'id': 'text-field'
         }),
                    'mark_speed': HiddenInput(attrs={
             'name': 'mark_speed',
