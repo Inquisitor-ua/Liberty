@@ -148,11 +148,14 @@
     padding: 20px;
     display: flex;
     justify-content: start;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    overflow-x:auto;
     width: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 
 .otzuv-karta{
@@ -207,4 +210,5 @@
 }
 .otzuv-text{
     font-size: 20px;
+    white-space: wrap;
 }

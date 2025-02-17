@@ -9,7 +9,7 @@
         <div class="main-top">
             <div class="otzuv-form">
                 <h1>Написать отзыв</h1>
-                <form method="post">
+                <form method="post" id="otzuv-form">
                     {% csrf_token %}
                     <div class="form-block">
                         <div class="input--star">
@@ -97,14 +97,14 @@
         <div class="main-bottom"></div>
     </div>
 
-    <div class="otzuvu-spisok">
+    <div class="otzuvu-spisok" id="carousel">
         {% for otzuv in otzuvu %}
             <div class="otzuv-karta">
                 <div class="name-mark">
                     <div>{{ otzuv.name }}</div>
                 </div>
                 <div class="otzuv-text">
-                    <div>{{ otzuv.text }}</div>
+                    <p>{{ otzuv.text }}</p>
                 </div>
             </div>
         {% endfor %}

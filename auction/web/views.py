@@ -39,7 +39,7 @@ def rasklad(request, rasklad_id = 0):
     return render(request, "web/rasklad.html", data)
 
 def otzuvu(request):
-    data = Otzuvu.objects.all()
+    data = Otzuvu.objects.order_by('-id')
     error = ''
     if request.method == 'POST':
         form = OtzivInput(request.POST)
