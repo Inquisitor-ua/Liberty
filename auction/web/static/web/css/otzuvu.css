@@ -62,6 +62,8 @@
 }
 .rating{
     height: 400px;
+    font-size: 10px;
+    text-shadow: 1px 2px 15px rgb(0, 0, 0);
     /* width: 100%; */
     flex: 1;
     border: 1px rgb(255, 255, 255) solid;
@@ -73,6 +75,7 @@
     /* margin-left: 50px; */
 }
 .rating .avg_pole{
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,11 +90,14 @@
     align-items: center;
     font-size: 23px;
     gap: 5px;
+    
 }
 .rating .list-mark{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
 }
 .form-block{
     display: flex;
