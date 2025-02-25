@@ -165,7 +165,7 @@
     margin-right: 25px;
     border: 1px black solid;
     border: 1px rgb(255, 255, 255) solid;
-    padding: 10px;
+    padding: 20px;
     padding-left: 20px;
     border-radius: 10px;
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
@@ -207,8 +207,13 @@
     justify-content: space-between;
     font-size: 30px;
     margin-bottom: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 15px rgb(0, 0, 0);
+    text-shadow: 1px 2px 15px rgb(0, 0, 0);
 }
 .otzuv-text{
     font-size: 20px;
     white-space: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
