@@ -47,7 +47,7 @@ def otzuvu(request):
             form.save()
             bot = telebot.TeleBot(TOKEN)
             msg = f"Новый отзыв!\nИмя: {form.data.get('name')}\nОтзыв: {form.data.get('text')}\nСкорость ответа: {form.data.get('mark_speed')}\nТрактовка ответа: {form.data.get('mark_trak')}\nОбщее впечатление: {form.data.get('mark_all')}"
-            bot.send_message(496615893, msg) #892951051
+            bot.send_message(892951051, msg) #892951051
             return redirect('otzuvu')
         else:
             error = 'Ошибка отправки данных'

@@ -102,9 +102,13 @@
             <div class="otzuv-karta">
                 <div class="name-mark">
                     <div>{{ otzuv.name }}</div>
+                    <div>5 <span class="star filled"></span></div>
                 </div>
                 <div class="otzuv-text">
                     <p>{{ otzuv.text }}</p>
+                </div>
+                <div class="otzuv-date">
+                    <p>{{ otzuv.data|date:"d F Y" }}</p>
                 </div>
             </div>
         {% endfor %}
