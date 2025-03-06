@@ -219,6 +219,8 @@ p{
 .in-osnova h3{
     font-size: 30px;
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
 .in-osnova p{
     text-align: center;
