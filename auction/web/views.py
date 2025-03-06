@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
 from .forms import ZapisInput, OtzivInput
+from django.db.models import F, ExpressionWrapper, IntegerField, functions
 import telebot
 import datetime
 
@@ -40,7 +41,12 @@ def rasklad(request, rasklad_id = 0):
     return render(request, "web/rasklad.html", data)
 
 def otzuvu(request):
-    data = Otzuvu.objects.order_by('-id')
+    data = Otzuvu.objects.annotate(
+    avg_mark=functions.Cast(
+        functions.Round((F('mark_speed') + F('mark_trak') + F('mark_all')) / 3.0),
+        output_field=IntegerField()
+    )
+).order_by('-id')
     error = ''
     if request.method == 'POST':
         form = OtzivInput(request.POST)

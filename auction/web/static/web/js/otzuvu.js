@@ -38,20 +38,20 @@ function main(){
         updateCardOpacity();
     });
 
-    document.querySelector('#otzuv-form').addEventListener("submit", function(event) {
-        const mark_speed = document.querySelectorAll(".mark_speed");
-        const mark_trak = document.querySelectorAll(".mark_trak");
-        const mark_all = document.querySelectorAll(".mark_all");
-        let ar = [mark_speed, mark_trak, mark_all];
-        for(i = 0; i <= 2; i++){
-            ar[i].forEach(star => {
-                if(!star.classList.contains('filled')){
-                    console.log('Не заполнена звезда');
-                    event.preventDefault();
-                };
-            });
-        };
-    });
+    // document.querySelector('#otzuv-form').addEventListener("submit", function(event) {
+    //     const mark_speed = document.querySelectorAll(".mark_speed");
+    //     const mark_trak = document.querySelectorAll(".mark_trak");
+    //     const mark_all = document.querySelectorAll(".mark_all");
+    //     let ar = [mark_speed, mark_trak, mark_all];
+    //     for(i = 0; i <= 2; i++){
+    //         ar[i].forEach(star => {
+    //             if(!star.classList.contains('filled')){
+    //                 console.log('Не заполнена звезда');
+    //                 // event.preventDefault();
+    //             };
+    //         });
+    //     };
+    // });
 };
 
 main()
