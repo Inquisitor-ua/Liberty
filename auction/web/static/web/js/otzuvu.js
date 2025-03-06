@@ -1,5 +1,5 @@
 function main(){
-    const stars = document.querySelectorAll('.star');
+    const stars = document.querySelectorAll('.for-click');
     stars.forEach(star => {
         star.addEventListener('click', () => {
             // Считываем значение 'data-value' у нажатой звезды

@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Rasklad, Otzuvu
@@ -52,5 +53,21 @@ def otzuvu(request):
         else:
             error = 'Ошибка отправки данных'
     # time = datetime.date.today().strftime('%d-%m-%Y')
+    marks = Otzuvu.objects.values_list('mark_speed', 'mark_trak', 'mark_all')
+    mark_speed = 0
+    mark_trak = 0
+    mark_all = 0
+    for mark in marks:
+        mark_speed += mark[0]
+        mark_trak += mark[1]
+        mark_all += mark[2]
+    avg_speed = round(mark_speed / len(marks), 0)
+    avg_trak = round(mark_trak / len(marks), 0)
+    avg_all = round(mark_all / len(marks), 0)
+    # avg_marks = {'avg_speed': avg_speed, 'avg_trak': avg_trak, 'avg_all': avg_all}
+    avg_marks = [avg_speed, avg_trak, avg_all]
+    avg_marks.insert(0, sum(avg_marks)/len(avg_marks))
+    print(avg_marks)
+    avg_marks = json.dumps(avg_marks, ensure_ascii=False)
     form = OtzivInput(initial={"mark_speed": 1, 'mark_trak': 1, 'mark_all': 1})
-    return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form, 'error': error})
+    return render(request, "web/otzuvu.html", {'otzuvu': data, 'form': form, 'error': error, 'avg_marks': avg_marks, 'marks': marks})

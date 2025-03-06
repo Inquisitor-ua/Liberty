@@ -22,33 +22,34 @@
                                 </div>
                             </div>
                             <div class="marks">
+                                {{ mark_sp }}
                                 <div><label>Скорость ответа: </label>
                                     <div>
-                                        <span class="star mark_speed" data-value="1"></span>
-                                        <span class="star mark_speed" data-value="2"></span>
-                                        <span class="star mark_speed" data-value="3"></span>
-                                        <span class="star mark_speed" data-value="4"></span>
-                                        <span class="star mark_speed" data-value="5"></span>
+                                        <span class="star mark_speed for-click" data-value="1"></span>
+                                        <span class="star mark_speed for-click" data-value="2"></span>
+                                        <span class="star mark_speed for-click" data-value="3"></span>
+                                        <span class="star mark_speed for-click" data-value="4"></span>
+                                        <span class="star mark_speed for-click" data-value="5"></span>
                                     </div>
                                 </div>{{ form.mark_speed }}
                                 
                                 <div><label>Трактовка ответа: </label>
                                     <div>
-                                        <span class="star mark_trak" data-value="1"></span>
-                                        <span class="star mark_trak" data-value="2"></span>
-                                        <span class="star mark_trak" data-value="3"></span>
-                                        <span class="star mark_trak" data-value="4"></span>
-                                        <span class="star mark_trak" data-value="5"></span>
+                                        <span class="star mark_trak for-click" data-value="1"></span>
+                                        <span class="star mark_trak for-click" data-value="2"></span>
+                                        <span class="star mark_trak for-click" data-value="3"></span>
+                                        <span class="star mark_trak for-click" data-value="4"></span>
+                                        <span class="star mark_trak for-click" data-value="5"></span>
                                     </div>
                                 </div>{{ form.mark_trak }}
 
                                 <div><label>Общее впечатление: </label>
                                     <div>
-                                        <span class="star mark_all" data-value="1"></span>
-                                        <span class="star mark_all" data-value="2"></span>
-                                        <span class="star mark_all" data-value="3"></span>
-                                        <span class="star mark_all" data-value="4"></span>
-                                        <span class="star mark_all" data-value="5"></span>
+                                        <span class="star mark_all for-click" data-value="1"></span>
+                                        <span class="star mark_all for-click" data-value="2"></span>
+                                        <span class="star mark_all for-click" data-value="3"></span>
+                                        <span class="star mark_all for-click" data-value="4"></span>
+                                        <span class="star mark_all for-click" data-value="5"></span>
                                     </div>
                                 </div>{{ form.mark_all }}
                             </div>
@@ -61,7 +62,7 @@
             <div class="rating">
                 <h1>Оценки</h1>
                 <div class="avg_pole">
-                    <p>Средняя оценка: 
+                    <p class="avg_stars">Средняя оценка: 
                         <span class="star avg_mark" data-value="1"></span>
                         <span class="star avg_mark" data-value="2"></span>
                         <span class="star avg_mark" data-value="3"></span>
@@ -70,21 +71,21 @@
                     </p>
                 </div>
                 <div class="list-mark">
-                    <p>1. Скорость ответа: 
+                    <p class="avg_stars">1. Скорость ответа: 
                         <span class="star avg_mark_speed" data-value="1"></span>
                         <span class="star avg_mark_speed" data-value="2"></span>
                         <span class="star avg_mark_speed" data-value="3"></span>
                         <span class="star avg_mark_speed" data-value="4"></span>
                         <span class="star avg_mark_speed" data-value="5"></span>
                     </p>
-                    <p>2. Трактовка ответа: 
+                    <p class="avg_stars">2. Трактовка ответа: 
                         <span class="star avg_mark_trak" data-value="1"></span>
                         <span class="star avg_mark_trak" data-value="2"></span>
                         <span class="star avg_mark_trak" data-value="3"></span>
                         <span class="star avg_mark_trak" data-value="4"></span>
                         <span class="star avg_mark_trak" data-value="5"></span>
                     </p>
-                    <p>3. Общее впечатление: 
+                    <p class="avg_stars">3. Общее впечатление: 
                         <span class="star avg_mark_all" data-value="1"></span>
                         <span class="star avg_mark_all" data-value="2"></span>
                         <span class="star avg_mark_all" data-value="3"></span>
@@ -102,7 +103,9 @@
             <div class="otzuv-karta">
                 <div class="name-mark">
                     <div>{{ otzuv.name }}</div>
-                    <div>5 <span class="star filled"></span></div>
+                    <div>
+                        <span class="star filled"></span>
+                    </div>
                 </div>
                 <div class="otzuv-text">
                     <p>{{ otzuv.text }}</p>
@@ -117,4 +120,22 @@
 
 {% block scripts %}
     <script src="{% static 'web/js/otzuvu.js' %}"></script>
+    <script>
+        const avg_mark = {{ avg_marks|safe }};
+        const speed_stars = document.querySelectorAll('.avg_stars');
+        let ind = 0;
+        console.log(speed_stars);
+        speed_stars.forEach(row => {
+            row_stars = row.querySelectorAll('span');
+            row_stars.forEach(s => {
+                const currentValue = parseInt(s.getAttribute('data-value'), 10);
+                if (currentValue <= avg_mark[ind]) {
+                    s.classList.add('filled');
+                } else {
+                    s.classList.remove('filled');
+                }
+            });
+            ind = ind + 1;
+        })
+    </script>
 {% endblock %}
