@@ -183,6 +183,7 @@ p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all ease 0.3s;
 }
 .osnova{
     width: 90%;
@@ -196,6 +197,7 @@ p{
     font-size: 20px;
     background-color: rgb(186, 85, 211);
     border-radius: 10px;
+    transition: all ease 0.3s;
 }
 .in-osnova{
     width: 25%;
@@ -204,17 +206,23 @@ p{
     background-color: rgb(138, 63, 157);
     padding: 20px;
     border-radius: 10px;
-    transition: all ease 0.2s;
-    
+    transition: all ease 0.3s;
+    height: 300px;
+    overflow: hidden;
 }
 .in-osnova:hover{
     transform: scale(1.05);
+    display: fixed;
+    width: 500px;
+    /* max-height: none; */
+    height: 400px;
 }
 .in-osnova div{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    transition: all ease 0.3s;
 }
 .in-osnova h3{
     font-size: 30px;
