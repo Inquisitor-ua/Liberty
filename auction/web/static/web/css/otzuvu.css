@@ -214,6 +214,17 @@
     text-shadow: 1px 1px 15px rgb(0, 0, 0);
     text-shadow: 1px 2px 15px rgb(0, 0, 0);
 }
+.star-mark{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 7px;
+}
+.star-mark span{
+    padding-bottom: 3px;
+    background-repeat: no-repeat;
+}
 .otzuv-text{
     font-size: 20px;
     white-space: wrap;
