@@ -213,9 +213,9 @@ p{
 .in-osnova:hover{
     transform: scale(1.05);
     display: fixed;
-    width: 500px;
+    width: 30%;
     /* max-height: none; */
-    height: 400px;
+    height: 450px;
 }
 .in-osnova div{
     display: flex;
