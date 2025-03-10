@@ -124,7 +124,7 @@ p{
 }
 .menu-button:hover, .form-button:hover{
     /*background-color: rgb(219, 112, 219);*/
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 15px rgb(255, 255, 255);
     background-color: rgb(102, 42, 109);
     transition-duration: 100ms;
 }
@@ -203,7 +203,7 @@ p{
     width: 25%;
     border: 1px rgb(255, 255, 255) solid;
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
-    background-color: rgb(138, 63, 157);
+    background-color: rgba(151, 62, 173, 0.735);
     padding: 20px;
     border-radius: 10px;
     transition: all ease 0.3s;
