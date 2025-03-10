@@ -4,6 +4,7 @@
     justify-content: stretch;
     flex-direction: row;
     align-items: center;
+    padding: 15px;
 }
 .rasklad-left{
     flex: 2;
