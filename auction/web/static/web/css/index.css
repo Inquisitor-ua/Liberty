@@ -16,6 +16,10 @@ body{
     justify-content: space-between;
     flex-direction: column;
 }
+@font-face{
+    font-family: '4-font';
+    src: url("/fonts/4-font") format('ttf')
+}
 /* body::after{
     content: '';
     width: 100%;
@@ -198,6 +202,7 @@ p{
     background-color: rgb(186, 85, 211);
     border-radius: 10px;
     transition: all ease 0.3s;
+    
 }
 .in-osnova{
     width: 25%;
@@ -209,13 +214,14 @@ p{
     transition: all ease 0.3s;
     height: 300px;
     overflow: hidden;
+    
 }
 .in-osnova:hover{
     transform: scale(1.05);
     display: fixed;
     width: 30%;
     /* max-height: none; */
-    height: 450px;
+    height: 300px;
 }
 .in-osnova div{
     display: flex;
@@ -227,12 +233,18 @@ p{
 .in-osnova h3{
     font-size: 30px;
     margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:"Neucha", sans-serif !important;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-style: normal;
     text-align: center;
 }
 .in-osnova p{
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:"Neucha", sans-serif !important;
+    letter-spacing: 2px;
+    font-weight: 800;
+    font-style: normal;
 }
 .catalog h1{
     font-size: 40px;
