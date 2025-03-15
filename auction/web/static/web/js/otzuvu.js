@@ -42,6 +42,7 @@ function main(){
         const mark_speed = Array.from(document.querySelectorAll(".mark_speed"));
         const mark_trak = Array.from(document.querySelectorAll(".mark_trak"));
         const mark_all = Array.from(document.querySelectorAll(".mark_all"));
+        const atentionMessage = document.querySelector("#attention");
         let ar = [mark_speed, mark_trak, mark_all];
         for(let i = 0; i <= 2; i++){
             for(let j = 0; j <= ar[i].length; j++) {
@@ -51,6 +52,7 @@ function main(){
                     console.log('Заполнена звезда');
                     break;
                 } else {
+                    atentionMessage.textContent = 'Проставьте оценку, пожалуйста)';
                     event.preventDefault();
                 }
             };

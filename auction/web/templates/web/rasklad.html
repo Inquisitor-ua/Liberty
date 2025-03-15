@@ -11,6 +11,7 @@
         <div class="forma">
             <form method="post">
                 <img src="{% static 'web/img/man-photo.jpg' %}" id="person-image">
+                <p class="chose-sex"><i>(нажмите на картинку, чтобы выбрать пол)</i></p>
                 {% csrf_token %}
                 {{ form.sex }}
                 <div class="field-container">

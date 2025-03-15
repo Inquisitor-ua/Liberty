@@ -32,6 +32,10 @@ form img{
 form img:hover{
     box-shadow: 1px 2px 15px rgb(255, 255, 255);
 }
+.chose-sex i{
+    color: rgb(188, 188, 188);
+    font-family: 'Arial';
+}
 .rasklad-right{
     width: 100%;
     align-self: stretch;

@@ -24,7 +24,7 @@ def rasklad(request, rasklad_id = 0):
             form.save()
             bot = telebot.TeleBot(TOKEN)
             msg = f"Имя: {form.data.get('name')}\nПол: {form.data.get('sex')}\nСоцсеть: {form.data.get('socset')}\nВозраст: {form.data.get('age')}\nРасклад: {form.data.get('rasklad')}\nОписание: {form.data.get('about')}"
-            bot.send_message(496615893, msg) #892951051
+            bot.send_message(892951051, msg) #892951051
             return redirect('rasklad')
         else:
             form = ZapisInput()
