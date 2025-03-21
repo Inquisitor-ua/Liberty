@@ -1,14 +1,14 @@
 .rasklad-layout{
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    gap: 40px;
     padding: 15px;
 }
 .rasklad-left{
     /* flex: 2; */
-    margin-right: 20px;
+    /* margin-right: 20px; */
     width: 60%;
 }
 .rasklad-right{
@@ -38,7 +38,6 @@ form img:hover{
     font-family: 'Arial';
 }
 .rasklad-right{
-    width: 100%;
     align-self: stretch;
     display: flex;
     justify-content: center;

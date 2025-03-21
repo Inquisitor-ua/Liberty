@@ -322,3 +322,26 @@ footer p{
 /* .animation{
     transition: 
 } */
+
+
+@media screen and (max-width: 768px){
+    .tovar{
+        width: 80%;
+        min-height: 420px;
+    }
+    .tovar h3, .tover h4{
+        font-size: 30px;
+    }
+    .tovar .description{
+        width: 90%;
+        font-size: 25px;
+    }
+    .tovar button{
+        width: fit-content;
+        padding: 5px 10px;
+        font-family: 'Neucha';
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
