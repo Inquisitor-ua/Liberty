@@ -137,7 +137,9 @@ p{
     src: url("/fonts/Renju") format('otf')
 }
 .tovar{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:"Neucha", sans-serif !important;
+    text-shadow: 1px 3px 30px rgb(0, 0, 0);
+    letter-spacing: 2px;
     width: 275px;
     border: 1px rgb(255, 255, 255) solid;
     padding: 10px;
@@ -221,7 +223,7 @@ p{
     display: fixed;
     width: 30%;
     /* max-height: none; */
-    height: 300px;
+    height: 350px;
 }
 .in-osnova div{
     display: flex;
@@ -234,16 +236,18 @@ p{
     font-size: 30px;
     margin: 0;
     font-family:"Neucha", sans-serif !important;
+    text-shadow: 1px 2px 30px rgb(0, 0, 0);
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 800;
     font-style: normal;
     text-align: center;
 }
 .in-osnova p{
     text-align: center;
     font-family:"Neucha", sans-serif !important;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.514);
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 500;
     font-style: normal;
 }
 .catalog h1{
