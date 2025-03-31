@@ -239,3 +239,51 @@
 .otzuv-date{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 768px){
+    .main-top{
+        flex-direction: column;
+        justify-content: start;
+    }
+    .form-input input{
+        text-align: center;
+        width: 40%;
+    }
+    .otzuv-form{
+        flex-direction: column;
+        justify-content: center
+    }
+    .input--star{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .two-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .form-input{
+        justify-content: center;
+    }
+    .marks label {
+        font-size: 21px;
+    }
+    .form-block {
+        margin-bottom: 10px;
+    }
+    .form-button {
+        font-size: 22px;
+        margin: 10px;
+    }
+    .rating p {
+        font-size: 20px;
+    }
+    .rating {
+        width: 92%;
+    }
+    .otzuvu-spisok {
+        width: auto;
+    }
+
+}

@@ -63,3 +63,26 @@ form img:hover{
 .vibor{
     text-align: center;
 }
+@media screen and (max-width: 768px){
+    .rasklad-layout{
+        flex-direction: column;
+        align-items: center;
+    }
+    .rasklad-left{
+        
+        width: 85%;
+    }
+    .rasklad-right{
+        width: 80%;
+        align-self: center;
+    }
+    .catalog h1{
+        font-size: 25px;
+    }
+    .description_ras {
+        font-size: 20px;
+    }
+    .rasklad-right h4 {
+        font-size: 25px;
+    }
+}
