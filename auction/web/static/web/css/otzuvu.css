@@ -83,6 +83,8 @@
 }
 .avg_pole p{
     margin: 10px 0;
+    font-family:"Neucha", sans-serif !important;
+    letter-spacing: 2px;
 }
 .rating p{
     display: flex;
@@ -90,6 +92,8 @@
     align-items: center;
     font-size: 23px;
     gap: 5px;
+    font-family:"Neucha", sans-serif !important;
+    letter-spacing: 1px;
     
 }
 .rating .list-mark{
@@ -181,6 +185,7 @@
 }
 .marks > div{
     display: flex;
+    font-family:"Neucha", sans-serif !important;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
@@ -191,7 +196,7 @@
     margin-bottom: 10px;
 }
 .marks label{
-    font-size: 20px;
+    font-size: 23px;
     text-align: center;
     text-shadow: 1px 1px 15px rgb(0, 0, 0);
     text-shadow: 1px 2px 15px rgb(0, 0, 0);
@@ -210,7 +215,8 @@
     justify-content: space-between;
     font-size: 30px;
     margin-bottom: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Renju';
+    letter-spacing: 2px;
     text-shadow: 1px 1px 15px rgb(0, 0, 0);
     text-shadow: 1px 2px 15px rgb(0, 0, 0);
 }
@@ -231,9 +237,10 @@
     text-align: center;
 }
 .otzuv-text{
-    font-size: 20px;
+    font-size: 22px;
     white-space: wrap;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:"Neucha", sans-serif !important;
+    letter-spacing: 2px;
     
 }
 .otzuv-date{
